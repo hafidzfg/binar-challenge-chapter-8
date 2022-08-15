@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../Components/Navbar";
 
 export default function AddPlayer() {
   const [username, setUsername] = useState("");
@@ -36,6 +37,7 @@ export default function AddPlayer() {
 
   return (
     <div className="container">
+      <Navbar />
       <form className="row mt-3 d-flex w-100" onSubmit={handleSubmit}>
         <div className="col form-group">
           <label htmlFor="username" className="form-label">
@@ -76,20 +78,13 @@ export default function AddPlayer() {
             name="password"
             onChange={(e) => setPassword(e.target.value)}></input>
         </div>
-        <button className="btn btn-primary form-control" type="submit">
-          Add Player
-        </button>
+        <div className="d-flex align-items-end col form-group">
+          <button className="btn btn-primary form-control" type="submit">
+            Add Player
+          </button>
+        </div>
       </form>
 
-      <div className="row mt-3 w-100">
-        <div className="col d-flex justify-content-end">
-          <Link to="/">
-            <button type="button" className="btn btn-success">
-              Back to Dashboard
-            </button>
-          </Link>
-        </div>
-      </div>
       <div className="message">{message ? <p>{message}</p> : null}</div>
     </div>
   );

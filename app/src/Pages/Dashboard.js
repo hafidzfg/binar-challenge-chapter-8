@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 export default function Dashboard() {
   const [players, setPlayers] = useState([]);
@@ -45,6 +46,7 @@ export default function Dashboard() {
 
   return (
     <div className="container">
+      <Navbar />
       <div className="row mt-3">
         <form className="row d-flex w-100" onSubmit={applyFilters}>
           <div className="col form-group">
